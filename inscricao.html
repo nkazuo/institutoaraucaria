@@ -1,0 +1,258 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Mentores Araucária</title>
+    
+    <!-- Fontes e Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* RESET E BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #d1e0d1; /* Fundo inspirado no tom de verde acinzentado do cartaz */
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* CONTAINER PRINCIPAL UNIFICADO */
+        .container-master {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+            align-items: stretch; /* Garante que as duas colunas tenham a mesma altura */
+            position: relative;
+        }
+
+        /* LADO ESQUERDO: CARTAZ (PROPORCIONAL) */
+        .lado-imagem {
+            flex: 1.1;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .lado-imagem img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+        }
+
+        /* LADO DIREITO: FORMULÁRIO */
+        .lado-form {
+            flex: 0.9;
+            padding: 60px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* LINK VOLTAR DISCRETO */
+        .voltar-top-right {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            text-decoration: none;
+            color: #bbb;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .voltar-top-right:hover {
+            color: #0b5e56;
+            transform: translateX(3px);
+        }
+
+        /* TEXTOS DO FORMULÁRIO */
+        .lado-form h2 {
+            color: #0b5e56; /* Verde escuro do cartaz */
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+
+        .tema-subtitulo {
+            color: #4b928a; /* Verde médio do cartaz */
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+
+        /* CAMPOS DE ENTRADA */
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        .campo label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .campo input, 
+        .campo textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e8f0ee;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: #333;
+            transition: 0.3s ease;
+            outline: none;
+        }
+
+        .campo input:focus, 
+        .campo textarea:focus {
+            border-color: #4b928a;
+            background-color: #f4faf9;
+        }
+
+        /* ÁREA DO CURRÍCULO */
+        .campo textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        /* BOTÃO PREMIUM (COR DO CARTAZ) */
+        .btn-enviar {
+            width: 100%;
+            padding: 18px;
+            background: #0b5e56; /* Cor exata do verde principal do cartaz */
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(11, 94, 86, 0.2);
+        }
+
+        .btn-enviar:hover {
+            background: #08443e;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(11, 94, 86, 0.3);
+        }
+
+        .footer-obs {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #aaa;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVIDADE PARA CELULAR */
+        @media (max-width: 1000px) {
+            .container-master {
+                flex-direction: column;
+            }
+            .lado-imagem {
+                padding: 30px;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            .lado-form {
+                padding: 40px 25px;
+            }
+            .voltar-top-right {
+                top: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-master">
+        
+        <!-- LINK VOLTAR -->
+        <a href="index.html" class="voltar-top-right">
+            VOLTAR AO INÍCIO <i class="fas fa-chevron-right"></i>
+        </a>
+
+        <!-- LADO ESQUERDO: CARTAZ -->
+        <div class="lado-imagem">
+            <!-- Certifique-se de que o arquivo mentores.jpeg está na pasta correta -->
+            <img src="imagens/projetos/mentores.jpeg" alt="Mentores Araucária">
+        </div>
+
+        <!-- LADO DIREITO: FORMULÁRIO -->
+        <div class="lado-form">
+            <h2>Mentores Araucária</h2>
+            <p class="tema-subtitulo">Conectando Experiência com Inovação</p>
+
+            <form action="https://formsubmit.co/SEU-EMAIL-AQUI" method="POST">
+                <!-- Configurações do FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://nkazuo.github.io/instituto_araucaria/obrigado.html">
+
+                <div class="campo">
+                    <label>Nome Completo</label>
+                    <input type="text" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="campo">
+                    <label>E-mail Corporativo</label>
+                    <input type="email" name="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="campo">
+                    <label>WhatsApp</label>
+                    <input type="tel" name="whatsapp" placeholder="(49) 99999-9999" required>
+                </div>
+
+                <div class="campo">
+                    <label>Empresa / Cargo Atual</label>
+                    <input type="text" name="empresa" placeholder="Ex: Diretor na Empresa X">
+                </div>
+
+                <div class="campo">
+                    <label>Mini Currículo / Experiência</label>
+                    <textarea name="curriculo" maxlength="2000" placeholder="Conte-nos brevemente sua trajetória profissional..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Confirmar Candidatura</button>
+                
+                <p class="footer-obs">
+                    <i class="fas fa-lock"></i> Seus dados estão protegidos.
+                </p>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
